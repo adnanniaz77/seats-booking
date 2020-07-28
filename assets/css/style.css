@@ -54,6 +54,10 @@ body {
     transform: scale(1);
 }
 
+.seatingsAndScreen {
+    margin: 40px 0;
+}
+
 .screen {
     background-color: #fff;
     box-shadow: 0 0 10px #fff;
@@ -95,4 +99,8 @@ body {
 .seat:not(.occupied):hover {
     cursor: pointer;
     transform: scale(1.2);
+}
+
+.report span {
+    color: #3faac5;
 }
