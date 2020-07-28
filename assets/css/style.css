@@ -18,6 +18,7 @@ body {
 
 .container {
     margin: 20px 0;
+    perspective: 1000px;
 }
 
 #moviesSelector {
@@ -53,7 +54,14 @@ body {
     transform: scale(1);
 }
 
-.legendStatus {
+.screen {
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff;
+    width: 250px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    transform: rotateX(-45deg);
 }
 
 .seatings {
