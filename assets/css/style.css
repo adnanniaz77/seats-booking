@@ -29,6 +29,28 @@ body {
 }
 
 .legend {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    list-style: none;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend .seat {
+    margin-right: 10px;
+}
+
+.legendStatus {
+    display: flex;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.legend .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
 }
 
 .legendStatus {
@@ -60,4 +82,9 @@ body {
 
 .seat.occupied {
     background-color: #fff;
+}
+
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
