@@ -20,24 +20,32 @@ selectOptions.addEventListener("change", (e) => {
     updateSelectedSeatsCount();
 });
 
-// create and set indices of selected items
+// function to create and set indices of selected items in local storage
 function recordSeatIndices() {
-    let seatsArr = [];
     let indices = [];
     const totalSeats = document.querySelectorAll(".seatings .seat");
 
-    totalSeats.forEach((each) => {
-        seatsArr.push(each);
+    totalSeats.forEach((each, i) => {
+        each.classList.contains("selected") ? indices.push(i) : "";
     });
-
-    seatsArr.forEach((each, i) => {
-        seatsArr.indexOf(
-            each.classList.contains("selected") ? indices.push(i) : ""
-        );
-    });
-
-    localStorage.setItem("indices", indices);
+    localStorage.setItem("indices", JSON.stringify(indices));
 }
+
+// get items from local storage --------------------------------
+function retrieveSelectedSeats() {
+    const storedIndicesString = localStorage.getItem("indices");
+    storedIndices = JSON.parse(storedIndicesString);
+    console.log(storedIndices);
+
+    let allSeats = document.querySelectorAll(".seatings .seat");
+    storedIndices.forEach((each) => {
+        allSeats[each].classList.add("selected");
+    });
+
+    updateSelectedSeatsCount();
+}
+
+retrieveSelectedSeats();
 
 //
 seatingsAndScreen.addEventListener("click", (e) => {
