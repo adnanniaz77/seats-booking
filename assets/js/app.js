@@ -38,9 +38,11 @@ function retrieveSelectedSeats() {
     console.log(storedIndices);
 
     let allSeats = document.querySelectorAll(".seatings .seat");
-    storedIndices.forEach((each) => {
-        allSeats[each].classList.add("selected");
-    });
+    if (storedIndices != null) {
+        storedIndices.forEach((each) => {
+            allSeats[each].classList.add("selected");
+        });
+    }
 
     updateSelectedSeatsCount();
 }
